@@ -1,4 +1,5 @@
 import { SoundManager } from "./SoundManager.js";
+
 export class GameDesign {
     playGame;
     constructor(game) {

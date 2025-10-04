@@ -1,12 +1,15 @@
 import { SoundManager } from "./SoundManager.js";
+
 export class PlayGame {
     flippedCards = [];
     total_Cards;
     matched_pairs = 0;
     progressBar;
+    restartBtn;
     constructor(totalCards) {
         this.total_Cards = totalCards / 2;
         this.progressBar = document.getElementById('gameProgress');
+        this.restartBtn = document.getElementById('restartBtn');
     }
     handleFlip(obj) {
         const { Wrapper, value } = obj;
@@ -37,6 +40,9 @@ export class PlayGame {
             SoundManager.PlaySong('Mis_Match');
         }
         this.flippedCards = [];
+        if (this.matched_pairs === this.total_Cards) {
+            this.finishGame();
+        }
     }
     flipBack(obj) {
         const img = obj.Wrapper.querySelector("img");
@@ -52,5 +58,21 @@ export class PlayGame {
             this.progressBar.style.width = `${percent}%`;
             this.progressBar.textContent = `${percent}%`;
         }
+    }
+    restartGame(callback) {
+        this.matched_pairs = 0;
+        this.flippedCards = [];
+        if (this.progressBar) {
+            this.progressBar.style.width = '0%';
+            this.progressBar.textContent = '0%';
+        }
+        this.restartBtn?.classList.add("d-none");
+        callback();
+    }
+    finishGame() {
+        setTimeout(() => {
+            alert("🎉 Congratulations! You matched all cards!");
+            this.restartBtn?.classList.remove("d-none");
+        }, 500);
     }
 }
