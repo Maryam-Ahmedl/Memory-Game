@@ -1,0 +1,53 @@
+body{
+    background-image: url('assets/brain.jpg');
+    background-repeat: repeat;
+    background-position: right top;
+    background-size: auto;
+    min-height: 100vh;
+}
+#GameContainer {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    max-width: 1200px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* #GameContainer .card {
+    width: 140px;    
+    height: 180px;  
+    flex: 0 0 auto;  
+    gap: 3px;
+}
+
+#GameContainer img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+} */
+
+.game-card {
+    width: 120px;      /* card width */
+    height: 160px;     /* card height */
+    border: none;
+    overflow: hidden; 
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    background: white;         
+}
+
+.card-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}

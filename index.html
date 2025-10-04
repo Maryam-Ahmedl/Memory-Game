@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+        <div>
+            <button id="startbtn" class="btn btn-success btn-lg rounded-pill shadow px-5 py-3 bg-gradient">🎮 Start Game</button>
+        </div>
+        <div id="Game-Wrapper" class="p-3 rounded shadow d-none">
+            <div class="progress mt-3" style="height: 35px;">
+                <div id="gameProgress" class="progress-bar progress-bar-striped bg-success" 
+                    role="progressbar" style="width: 0%"> 0% </div>
+            </div>
+            <div id="GameContainer" class="row g-2 justify-content-center mt-3"></div>
+        </div>
+    </div>
+    <script type="module" src="dist/main.js"></script>
+</body>
+</html>
